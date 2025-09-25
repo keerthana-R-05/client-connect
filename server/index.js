@@ -32,6 +32,11 @@ let complaints = [];
 
 // API Routes
 
+// FIX: Added root route to confirm the server is running
+app.get('/', (req, res) => {
+  res.send('Citizen Connect API is running and healthy!');
+});
+
 // User submits a new complaint
 app.post('/api/complaints', (req, res) => {
   const newComplaint = {
