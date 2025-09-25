@@ -1,0 +1,330 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fbf3f2;
+  color: #032539;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-orange: #FA991C;
+  --secondary-white: #FBF3F2;
+  --accent-teal: #1C768F;
+  --dark-navy: #032539;
+}
+
+/* General Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.card {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.button.primary {
+  background-color: var(--accent-teal);
+}
+
+.button.secondary {
+  background-color: var(--primary-orange);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 40px;
+  background-color: var(--dark-navy);
+  color: white;
+  position: relative;
+  z-index: 1000; /* Added z-index to bring it to the front */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-orange);
+}
+
+/* Fix for overlapping elements */
+.nav-links-container {
+  display: flex;
+  align-items: center;
+}
+
+.welcome-text {
+  margin-right: 20px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Home Page Specifics */
+.home-container {
+  padding: 0;
+  max-width: none;
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.hero-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.home-content-section {
+  padding: 50px 40px;
+  text-align: center;
+}
+
+.home-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: var(--accent-teal);
+  animation: float-up 1.5s ease-in-out;
+}
+
+@keyframes float-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-content {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 20px auto;
+  line-height: 1.6;
+}
+
+.blog-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+  text-align: left;
+}
+
+.blog-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.blog-card h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--dark-navy);
+}
+
+.blog-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* User Profile Specifics */
+.profile-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 40px;
+}
+
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: block;
+  object-fit: cover;
+}
+
+.profile-form .input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Forms */
+.form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.status-pending { background-color: #fbd38d; color: #9c5c00; }
+.status-inprogress { background-color: #90cdf4; color: #1e40af; }
+.status-resolved { background-color: #9ae6b4; color: #166534; }
+
+/* Emergency Call Button */
+.emergency-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* ... all the other styles above ... */
+
+/* Mobile Menu & Hamburger Icon */
+.hamburger-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: white;
+  z-index: 100;
+}
+
+@media (max-width: 768px) {
+  .nav-links-container {
+    display: flex; /* Keep flex for layout */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--dark-navy);
+    padding: 0; /* Padding will be added when active */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    max-height: 0; /* Initially collapsed */
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+  }
+  .nav-links-container.active {
+    max-height: 500px; /* A large value to allow the content to show */
+    padding: 20px;
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .nav-links li {
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+  }
+  .nav-links-container .welcome-text {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .hamburger-icon {
+    display: block;
+  }
+}
